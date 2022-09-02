@@ -1,5 +1,4 @@
 # Introduction-To-R-Programming
-# Introduction-To-R-Programming
 Introduction to R Programmimg
 Problem Statement
 ShippingtoMali, a shipping company, provides shipping to Mali for items bought on Amazon at a rate of $4 for the first item and $2 for each subsequent item with each of those items is also subject to import 10% tax.
