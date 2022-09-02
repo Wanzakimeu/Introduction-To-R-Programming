@@ -1,0 +1,605 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# R Basics for Data Science
+
+## 1. Variables, Printing and Arithmetic Operators
+We will now create variables, then assign them values using the left assignment operator <-. A variable is a container that can hold any value that we would like i.e. characters, strings, matrices, vectors etc.
+
+### Example 1
+```{r}
+# Let's create a variable named a and assign it with a value 10. Hint: We then use the inbuilt fuction to print out a as shown below
+a <- 10
+print(a) 
+
+# or just print out by refering to the variable as shown
+a
+```
+
+### Example 2
+```{r}
+# We can use the arithmetic operators: +, -, *, /, - as shown below. Let's use the `a` variable we declared in the previous cell.
+
+c <- 5
+
+# Performing an addition operation
+print(a + c)
+
+# Performing a multiplication operation
+print(a * c)
+
+# Performing a division operation
+print(a / c)
+
+# Performing an subtraction operation
+print(a - c)
+```
+
+### Example 3
+```{r}
+# We can use the increment increment operator  as shown
+a++ 
+a
+```
+
+
+
+### Challenge 1
+```{r}
+# Create a variable name firstname and assign it with a respective value
+# ---
+# YOUR CODE GOES BELOW
+# 
+firstname <- a
+print(firstname)
+```
+
+### Challenge 2
+```{r}
+# Create a variable cairo-nairobi and assign it with a value 8000 then create another variable nairobi-capetown assigning it 6000. Finally create a third variable cairo-capetown which will contain the value of nairobi-cairo + nairobi-capetown. 
+# ---
+# YOUR CODE GOES BELOW
+# 
+cairo_nairobi <- 8000
+nairobi_capetown <- 6000
+cairo_capetown <- (cairo_nairobi + nairobi_capetown)
+print(cairo_capetown)
+```
+
+### Challenge 3
+```{r}
+# Mary had twelve mangoes. She divided them between three of her friends. Use what you have learned in the above examples to implement this case using R.
+# ---
+# YOUR CODE GOES BELOW
+# 
+
+```
+
+
+
+
+## 2. Data Types
+In order to make use of the R programming language, we will need to have a strong understanding of basic data types. A data type is a classification that dictates what a variable or object can hold in computer programming. This is important concept to understand expecially when dealing with columns of different datatypes. To determine while datatype a variable contains, we can pass our variable a to our operator as shown below. 
+
+### Example 1
+```{r}
+# The following variable has an integer datatype
+a <- 20
+print(typeof(a))
+
+# The following variable has a string datatype
+a <- '20'
+print(typeof(a))
+
+# The following variable has a complex datatype
+a <- 1 + 2i 
+print(typeof(a))
+```
+
+
+### Example 2
+```{r}
+# Lets add variables with different datatypes then examine the outcome. Uncomment the last line and run the code. Once we get the outcome, fix the error...try and understand why there is an error
+# ---
+# 
+
+# Creating our variables
+# 
+x <- 300
+y <- 200
+
+# Printing out our operation
+x + y
+
+```
+
+### Example 3 
+```{r}
+# What we could have done in the previous example? We could have converted our variable type as shown.
+# ---
+# 
+
+# Creating our variables
+# 
+x = 300
+y = '100'
+
+# Printing out our operation
+# 
+print (x + strtoi(y))
+```
+
+
+
+### Example 4
+```{r}
+# Something to note is that automatic type - conversion happens from int to float as shown below
+# ---
+# 
+
+# The function strtoi() will convert a value to integer
+a <- strtoi(10) 
+print(typeof(a))
+
+b <- 5.0
+print(typeof(b))
+
+a <- a + b 
+print(typeof(a))
+```
+
+
+### Example 5
+```{r}
+# Let's concatenate our names as shown below. This would entail combining variables. The paste() fuction will allow us to do this
+# ---
+# 
+
+# Creating our variables
+# 
+firstname <- 'Valentine '
+lastname <- 'Mwangi' 
+
+# Printing out our concatenation
+#
+paste(firstname, lastname)
+```
+
+
+
+
+### Challenge 1
+```{r}
+# Question: Concatenate and print out your full names.
+# ---
+# YOUR CODE GOES BELOW
+# 
+firstname <- 'Mswahili '
+lastname <- 'Kingori' 
+
+# Printing out our concatenation
+#
+paste(firstname, lastname)
+```
+
+### Challenge 2
+```{r}
+# Question: Perform integer division of 229 and 3 with the result being an integer.
+# ---
+# YOUR CODE GOES BELOW
+# 
+a <- 229
+b <- 3
+c <- a/b
+
+c
+print(typeof(c))
+
+```
+
+### Challenge 3
+```{r}
+# Question: Concatenate and print your postal address with the city and country.
+# ---
+# YOUR CODE GOES BELOW
+# 
+city <- 'Diani'
+country <- 'Kenya'
+
+paste(city,country)
+```
+
+
+
+## 3. Conditional (If) Statements
+
+### Example 1
+```{r}
+# Using the if statement
+# ---
+#  
+
+# Creating our variables
+# 
+x <- 400
+y <- 900
+
+
+# Creating our if statement
+#
+if(x < y){
+    print("x is less than y")   
+}
+```
+### Example 2
+```{r}
+# Using the else if keyword
+# ---
+#  
+
+# Creating our variables
+r <- 100
+s <- 100
+
+# Creating our if statement
+if(r < s){
+    print("r is less than r")
+} else if(r == s) {
+    print("r and s are equal")
+}
+```
+
+
+
+### Example 3
+```{r}
+# Using the else keyword
+# ---
+#  
+
+# Creating
+a <- 150
+b <- 50
+
+# Creating our if statement
+# 
+if(b > a){
+    print("b is greater than a")
+} else if (a == b){
+    print("a and b are equal")
+} else {
+    print("a is greater than b")
+}
+```
+
+
+
+### Challenge 1
+```{r}
+# Question: Find out if q is less than p
+# ---
+# YOUR CODE GOES BELOW
+# 
+
+# Declaring our variables
+p <- 10
+q <- 8
+if(q < p){
+    print("q is lesser than p")
+} else {
+    print("q is not less than p")
+}
+
+```
+
+
+### Challenge 2
+```{r}
+# Question: Check whether value of vowel, i.e. a, e, i, o or u 
+# then displays whether the entered letter is a vowel. 
+# One can change the value of the vowel.
+# ---
+# YOUR CODE GOES BELOW
+#
+
+# Assigning our variable vowel
+vowel <- "i"
+
+if(vowel =="i"){
+    print("i is a vowel")
+} else {
+    print("i is not a vowel")
+}
+```
+
+
+
+## 4. Lists
+
+### Example 1
+```{r}
+# Creating a list 
+# ---
+# 
+
+# Creating a list named restaurants below
+restaurants <- list("cjs", "Java", "Nyama Mama", "Italian", "Swahili", "Khosa")
+
+# Then printing it out
+restaurants
+```
+
+
+
+### Example 2
+```{r}
+# Adding/Replacing an element to a list
+# ---
+# 
+restaurants[7] <- "Carnivore"
+restaurants
+```
+
+
+### Example 3
+```{r}
+# Selecting/Slicing from a list
+# ---
+# 
+restaurants[1]
+restaurants[2:4] 
+restaurants[-2] 
+```
+
+
+
+### Challenge 1
+```{r}
+# Question: Create a list named year, add all 12 months of the year
+# then print it out.
+# ---
+# YOUR CODE GOES BELOW
+# 
+
+# Creating a list named year below
+year <- list("January", "February", "March", "April", "May", "June", "July", "August","September","October","November","December")
+
+# Then printing it out
+year
+```
+
+
+### Challenge 2
+```{r}
+# Question: Select the third month from the year list above 
+# --- 
+# YOUR CODE GOES BELOW
+# 
+year[3]
+```
+
+
+### Challenge 3
+```{r}
+# Question:
+# 1. Create a list with 10 kenyan towns; Lodwar, Thika, Kitale, Nyeri, Lamu, Naivasha, Nanyuki, Kakamega, Nyahururu and Voi.
+# 2. Add the towm Homabay to the list,
+# 3. Update the city in the fifth position to Malindi
+# 4. Get the Nyahururu and Voi from the kenyan towns list
+# --- 
+# YOUR CODE GOES BELOW
+#
+
+Towns <- list('Lodwar', 'Thika', 'Kitale', 'Nyeri', 'Lamu', 'Naivasha', 'Nanyuki', 'Kakamega', 'Nyahururu' , 'Voi')
+
+Towns
+```
+## Add the towm Homabay to the list,
+```{r}
+Towns[11] <- 'Homabay'
+
+Towns
+```
+# 3. Update the city in the fifth position to Malindi
+
+```{r}
+Towns[5] <- 'Malindi'
+
+Towns
+```
+# 4. Get the Nyahururu and Voi from the kenyan towns list
+```{r}
+Towns[9:10]
+```
+## 5. Vectors
+
+### Example 1
+```{r}
+# A vector is a basic data structure in R. It is a sequence of data elements of the same basic type. Let's now create a vector named footballers.
+# ---
+# 
+
+# Creating our footballers vector
+# 
+footballers <- c("Wayne", "Alexander", "Origi", "Salah", "Mane", "Henderson")
+footballers
+
+```
+### Example 2
+```{r}
+# Let's select elements from a vector 
+# ---
+# 
+footballers[c(2,3)]
+footballers[c(2)]
+footballers[2]
+footballers[c(1:2)] 
+footballers[c(-3)] 
+```
+
+### Challenge 1
+```{r}
+# Create a vector with 5 countries in Africa
+# --- 
+# YOUR CODE GOES BELOW
+# 
+AfricaCountries <- c("Kenya", "Uganda", "Tanzania", "Rwanda", "Burundi")
+AfricaCountries
+```
+### Challenge 2
+```{r}
+# Select the first two elements in the vector created in challenge 1
+# --- 
+# YOUR CODE GOES BELOW
+# 
+AfricaCountries[c(1:2)]
+
+```
+
+## 6. For Loops and If Statements
+
+### Example 1
+```{r}
+# A for loop helps us to iterate through data as shown below. 
+# We will iterate through the restaurants list that we created earlier
+# --- 
+# 
+
+# Iterating through a list
+#
+for ( i in restaurants){ 
+ print(i)
+}
+
+# Iterating through a vector
+#
+fruit <- c('Apple', 'Orange', 'Passion fruit', 'Banana')
+for ( j in fruit){ 
+ print(j)
+}
+```
+
+
+### Example 2
+```{r}
+# An if statement can be used to apply conditions to our code. Let's use an if statement and then also apply another concept of useing a break statement that will stop our loop from running.
+# ---
+# 
+
+# Creating a mobilde phones list
+# 
+mobile_phone <- list("iphone 4", "iphone 5", "iphone 6", "iphone 7", "iphone 8", "iphone x", "iphone xs")
+
+# Creating our loop statement
+# 
+for (x in mobile_phone){
+    if (x == 'iphone 8'){
+        break
+    }  
+    print(x)
+}
+```
+
+
+
+
+### Challenge 1
+```{r}
+# Iterate through the following list of singers
+# ---
+# YOUR CODE GOES BELOW
+# 
+
+# Creating a singers list
+# 
+singers <-list("Carey", "Jackson", "Akon", "Bahati", "Legend", "Spears")
+for ( s in singers){ 
+ print(s)
+}
+
+```
+### Challenge 2
+```{r}
+# Iterate through the following vector named ice-creams and stop at Apple
+# ---
+# YOUR CODE GOES BELOW
+#
+
+# Creating a ice-creams list
+# 
+icecreams = c("Blueberry", "Raspberry", "Vanilla", "Chocolate", "Apple", "Banana", "Passion")
+for (e in icecreams){
+    if (e == 'Apple'){
+        break
+    }  
+print(e)
+}
+```
+
+## 7. Functions
+
+### Example 1
+```{r}
+
+# Let's create a function to find out which of two numbers is greater than the other 
+# ---
+#
+max_of_two <- function() {
+  a <- 10
+  b <- 5
+  if (a > b){
+    return(a)
+  }
+  return(b)
+}
+max_of_two()
+```
+### Example 2
+```{r}
+# Let's create a function with parameters
+# ---
+#
+average_of_two_numbers <- function(x, y){
+  average_of_two_numbers <- (x + y)/2 
+  return(average_of_two_numbers)
+}
+average_of_two_numbers(2,2)
+```
+
+### Challenge 1
+```{r}
+# Question: Create an R function that calculates the area of rectangle 
+# when the value of the height and width is passed to the function.
+# ---
+# YOUR CODE GOES HERE
+
+area_rectangle <- function(x, y){
+  area_rectangle <- (x * y) 
+  return(area_rectangle)
+}
+area_rectangle(4,2)
+```
+
+### Challenge 2
+```{r}
+# Question: Uberite, a logistics app has a base fare of Ksh. 400. 
+# The app charges Ksh. 30 for every 100 meters travelled. 
+# Create an R function fare that takes the distance travelled 
+# as a parameter and returns the charge.
+# ---
+# YOUR CODE GOES HERE
+Fare <- function(m){
+  x <- 400
+  y <- (30*m)/100
+  Fare <- (x + y) 
+  return(Fare)
+}
+Fare(500)
+```
+
+
+
+
